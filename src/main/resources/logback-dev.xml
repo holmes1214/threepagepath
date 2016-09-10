@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+	<appender name="logfile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>/Volumes/workspace/logs/dts-config.log</File>
+		<encoder>
+			<pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %-5level %logger{80}.%method - %msg%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/Volumes/workspace/logs/dts-config.log%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+	<logger name="org.apache" level="ERROR" />
+	<logger name="org.springframework" level="ERROR" />
+	<logger name="npet.sf" level="ERROR" />
+	<logger name="com.alibaba.druid" level="ERROR" />
+	<root level="debug">
+		<appender-ref ref="logfile" />
+	</root>
+</configuration>

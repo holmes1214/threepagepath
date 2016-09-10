@@ -1,0 +1,14 @@
+spring:
+  mvc:
+    static-path-pattern: /static/**
+  aop:
+    auto: true
+  profiles:
+    active: dev
+    
+druid:
+  stat:
+    mergeSql: true
+    slowSqlMillis: 5000
+server:
+  port: 8011
