@@ -1,61 +1,24 @@
-flushtoken:
-  task:
+inputData: 
+  pagesize: 3
+  calc:
     cron: 0 * * * * ?
-queue:
-  redis:
-    msgkey: MNS_QUEUE_MSGID
-  name:
-    test: TEST-4MESSAGES
-  mns:
-    endpoint: http://1111040808049299.mns.cn-beijing.aliyuncs.com/
-  access:
-    id: VGGRDrbE1VOerrNF
-    secret: xMKdxoF6AENLIggVkcGFco3bbpVXzC
-agent:
-  HB:
-    time:
-      limit: 200000
-    redis:
-      key: agentHBRedisKey
-  queue:
-    name:
-      data: ejlerpDevDtsDataQueue
-      event: ejlerpDevDtsEventQueue
-      alert: ejlerpDevDtsAlertQueue
-      hb: ejlerpDevDtsHbQueue
-    splitSeprator: --
+  userkey:
+    prefix: userdata-
+  userset:
+    key: userset
+  toplist:
+    key: toplist
+  
 logging:
-  level:
-    cn.egenie: DEBUG
   config: classpath:logback-dev.xml
 spring:
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.0.156:3306/ejlerp_dts
-    username: root
-    password: ejl13579
-    initialSize: 5
-    minIdle: 5
-    maxActive: 20
-    maxWait: 60000
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: SELECT 1 FROM DUAL
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-    connectionProperties: null
-  jpa:
-    database: MYSQL
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017
-      database: egenie
+  redis:
+    host: 127.0.0.1
+    password:
+    port: 6379
+    timeout: 100
+    pool:
+      max-active: 20
+      max-idle: 5
+      max-wait: 100
+      min-idle: 2
