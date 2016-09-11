@@ -2,12 +2,12 @@
 <configuration scan="true">
 	<appender name="logfile"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<File>logs/dts-config.log</File>
+		<File>/Volumes/workspace/logs/topnpath.log</File>
 		<encoder>
 			<pattern>%-20(%d{yyyy-MM-dd HH:mm:ss.SSS}) [%thread] %-5level %logger{80}.%method - %msg%n</pattern>
 		</encoder>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>logs/dts-config.log%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>/Volumes/workspace/logs/topnpath.log%d{yyyy-MM-dd}.log</fileNamePattern>
 		</rollingPolicy>
 	</appender>
 	<logger name="org.apache" level="ERROR" />

@@ -3,10 +3,11 @@ package com.zuora.homework.threepagepath.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Service;
 
 import com.zuora.homework.threepagepath.service.DataCollector;
 import com.zuora.homework.threepagepath.service.TopNReader;
-
+@Service
 public class PagePathServiceImpl implements DataCollector,TopNReader{
 
 	@Autowired
