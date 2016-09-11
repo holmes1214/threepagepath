@@ -6,7 +6,11 @@ import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 import redis.clients.jedis.JedisPoolConfig;
-
+/**
+ * spring boot的bean 定义
+ * @author haozou
+ *
+ */
 @Configuration
 public class Config {
 

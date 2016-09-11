@@ -1,5 +1,9 @@
 package com.zuora.homework.threepagepath.data;
-
+/**
+ * 对每个用户访问事件进行统计时使用的path生成工具
+ * @author haozou
+ *
+ */
 public class PageStorage {
 	String[] data;
 	int index=0;

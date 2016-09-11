@@ -1,16 +1,23 @@
 inputData: 
+#top n 的设置
   pagesize: 3
+#统计TOP N的定时任务
   calc:
-    cron: 0 * * * * ?
+    cron: 0 0 0 * * ?
+#用户数据保存的键前缀和统计时使用的线程锁
   userkey:
     prefix: userdata-
+    lock: userlock
+#需要定时任务统计的用户集合
   userset:
     key: userset
+#top n的排序键
   toplist:
     key: toplist
   
 logging:
   config: classpath:logback-dev.xml
+#redis配置
 spring:
   redis:
     host: 127.0.0.1
